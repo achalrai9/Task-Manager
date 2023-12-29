@@ -2,7 +2,7 @@ const tasks = document.querySelector('.task-container');
 const input = document.querySelector('.add-task');
 const addTask = document.querySelector('.btn');
 let deleteT = document.querySelectorAll('.delete');
-console.log(deleteT);
+//console.log(deleteT);
 
 const taskAdder = function() {
     const taskInfo = input.value;
@@ -17,7 +17,7 @@ const taskAdder = function() {
 
         const deleteBtn = document.createElement('button');
         deleteBtn.classList.add('delete');
-        console.log(deleteBtn.classList.value);
+        //console.log(deleteBtn.classList.value);
         deleteBtn.appendChild(document.createTextNode('Delete'));
 
         const text = document.createTextNode(taskInfo);
@@ -27,18 +27,18 @@ const taskAdder = function() {
         deleteTask.appendChild(deleteBtn);
         newTask.appendChild(text);
         tasks.appendChild(newTaskGrid);
+
+        deleteT = document.querySelectorAll('.delete');
+
+        deleteT[deleteT.length - 1].addEventListener('click', (e) => {
+            //console.log(deleteT[deleteT.length - 1].parentNode.parentNode);
+            e.target.parentNode.parentNode.remove();
+        });
+
+    console.log(deleteT);
     }
 
     else alert('Please add some text');
-
-    deleteT = document.querySelectorAll('.delete');
-
-    deleteT[deleteT.length - 1].addEventListener('click', () => {
-        console.log(deleteT[deleteT.length - 1].parentNode.parentNode);
-        deleteT[deleteT.length - 1].parentNode.parentNode.remove();
-    });
-
-    console.log(deleteT);
 };
 
 addTask.addEventListener('click', taskAdder);
@@ -46,8 +46,10 @@ addTask.addEventListener('click', taskAdder);
 // To delete existing tasks
 
 deleteT.forEach((element) => {
-    element.addEventListener('click', () => {
-        console.log(element.parentNode.parentNode);
-        element.parentNode.parentNode.remove();
+    element.addEventListener('click', (e) => {
+        //console.log(element.parentNode.parentNode);
+        //console.log(e.target);
+        //element.parentNode.parentNode.remove();
+        e.target.parentNode.parentNode.remove();
     });
 });
