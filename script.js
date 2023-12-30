@@ -35,7 +35,9 @@ const taskAdder = function() {
             e.target.parentNode.parentNode.remove();
         });
 
-    console.log(deleteT);
+        input.value = '';
+
+    //console.log(deleteT);
     }
 
     else alert('Please add some text');
