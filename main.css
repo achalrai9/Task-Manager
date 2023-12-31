@@ -1,8 +1,9 @@
 .container {
     position: relative;
-    left: 25%;
-    width: 600px;
+    width: 90%;
+    left: 5%;
     height: 600px;
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 2px 0 8px rgb(180, 180, 180), /* Horizontal offset */
                 -2px 0 8px rgb(180, 180, 180); /* Horizontal inset */
@@ -30,6 +31,19 @@ h1 {
     border-bottom: 2px solid black;
 }
 
+.top-container {
+    position: relative;
+    padding: 5px;
+    width: 420px;
+    display: grid;
+    grid-template-columns: 315px 80px;
+    align-items: center;
+}
+
+.top-container-content {
+    padding: 2px;
+}
+
 .task-container {
     padding: 5px;
 }
@@ -50,8 +64,8 @@ h1 {
 }
 
 .add-task {
-    padding: 5px 15px;
-    border: 1px solid rgb(19, 171, 19);
+    width: 300px;
+    height: 100px;
 }
 
 .btn {
